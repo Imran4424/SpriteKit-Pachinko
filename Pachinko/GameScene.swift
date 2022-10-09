@@ -12,7 +12,9 @@ class GameScene: SKScene {
     var scoreLabel:SKLabelNode!
     var editLabel: SKLabelNode!
     
+    var boxes = [SKSpriteNode]()
     var balls = [String]()
+    var ballsAllowed = 5
     var score = 0 {
         didSet {
             scoreLabel.text = "Score: \(score)"
@@ -104,6 +106,7 @@ class GameScene: SKScene {
                 box.physicsBody = SKPhysicsBody(rectangleOf: box.size)
                 box.physicsBody?.isDynamic = false
                 addChild(box)
+                boxes.append(box)
             } else {
                 // create a ball
                 let ball = SKSpriteNode(imageNamed: balls[Int.random(in: 0..<balls.count)])
@@ -160,9 +163,25 @@ class GameScene: SKScene {
         if object.name == "good" {
             destroy(ball: ball)
             score += 1
+            ballsAllowed += 1
         } else if object.name == "bad" {
             destroy(ball: ball)
             score -= 1
+            ballsAllowed -= 1
+            
+            // game over
+            // game reset
+            // we can also do this just using one variable
+            // scroe == -5 will be enough in that case
+            if ballsAllowed == 0 {
+                for box in boxes {
+                    box.removeFromParent()
+                }
+
+                boxes.removeAll()
+                ballsAllowed = 5
+                score = 0
+            }
         }
     }
     
