@@ -12,6 +12,7 @@ class GameScene: SKScene {
     var scoreLabel:SKLabelNode!
     var editLabel: SKLabelNode!
     
+    var balls = [String]()
     var score = 0 {
         didSet {
             scoreLabel.text = "Score: \(score)"
@@ -49,6 +50,14 @@ class GameScene: SKScene {
         editLabel.position = CGPoint(x: 80, y: 700)
         addChild(editLabel)
         
+        balls.append("ballBlue")
+        balls.append("ballCyan")
+        balls.append("ballGreen")
+        balls.append("ballGrey")
+        balls.append("ballPurple")
+        balls.append("ballRed")
+        balls.append("ballYellow")
+        
         physicsBody = SKPhysicsBody(edgeLoopFrom: frame)
         physicsWorld.contactDelegate = self
         
@@ -70,7 +79,7 @@ class GameScene: SKScene {
             return
         }
         
-        let location = touch.location(in: self)
+        var location = touch.location(in: self)
         let objects = nodes(at: location)
         
         if objects.contains(editLabel) {
@@ -97,12 +106,13 @@ class GameScene: SKScene {
                 addChild(box)
             } else {
                 // create a ball
-                let ball = SKSpriteNode(imageNamed: "ballRed")
+                let ball = SKSpriteNode(imageNamed: balls[Int.random(in: 0..<balls.count)])
                 ball.physicsBody = SKPhysicsBody(circleOfRadius: ball.size.width / 2.0)
                 // restitution determines bouncynbss
                 ball.physicsBody?.restitution = 0.4
                 // we made physics body up here, so nil coaling is just to avoid warning
                 ball.physicsBody?.contactTestBitMask = ball.physicsBody?.collisionBitMask ?? 0
+                location.y = CGFloat.random(in: 500...680)
                 ball.position = location
                 ball.name = "ball"
                 addChild(ball)
