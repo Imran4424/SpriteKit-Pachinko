@@ -14,6 +14,7 @@
 		1D510B1928F29000001A5588 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D510B1728F29000001A5588 /* Main.storyboard */; };
 		1D510B1B28F29001001A5588 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D510B1A28F29001001A5588 /* Assets.xcassets */; };
 		1D510B1E28F29001001A5588 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D510B1C28F29001001A5588 /* LaunchScreen.storyboard */; };
+		1D510B2528F34E61001A5588 /* FireParticles.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1D510B2428F34E61001A5588 /* FireParticles.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		1D510B1828F29000001A5588 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1D510B1A28F29001001A5588 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1D510B1D28F29001001A5588 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1D510B2428F34E61001A5588 /* FireParticles.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FireParticles.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				1D510B1728F29000001A5588 /* Main.storyboard */,
 				1D510B1A28F29001001A5588 /* Assets.xcassets */,
 				1D510B1C28F29001001A5588 /* LaunchScreen.storyboard */,
+				1D510B2428F34E61001A5588 /* FireParticles.sks */,
 			);
 			path = Pachinko;
 			sourceTree = "<group>";
@@ -128,6 +131,7 @@
 			files = (
 				1D510B1928F29000001A5588 /* Main.storyboard in Resources */,
 				1D510B1028F29000001A5588 /* GameScene.sks in Resources */,
+				1D510B2528F34E61001A5588 /* FireParticles.sks in Resources */,
 				1D510B1B28F29001001A5588 /* Assets.xcassets in Resources */,
 				1D510B1E28F29001001A5588 /* LaunchScreen.storyboard in Resources */,
 			);
